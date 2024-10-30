@@ -3,7 +3,8 @@ import Country from "../types/Country";
 import MiniCountryCard from "./MiniCountryCard";
 import DetailedCountryCard from "./DetailedCountryCard";
 import Header from "./Header";
-import Test from "./Test";
+import MainArea from "./MainArea";
+
 
 
 const DataCenter: FC = (): JSX.Element => {
@@ -29,10 +30,10 @@ const DataCenter: FC = (): JSX.Element => {
     );
     return (
         countries.length > 0 ? (
-            <div>
-                <Test element={mainRender} />
+            <>
                 <Header countries={countries} element={mainRender} setter={testRender}/>
-            </div>
+                <MainArea elements={mainRender} countries={countries} setter={testRender} />
+            </>
         ) : (
             <div>Loading...</div>
         )
